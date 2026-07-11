@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Based Student Performance &amp; Placement Guidance System</title>
+  <meta name="description" content="Evaluate your placement readiness using an AI-powered machine learning model built on IBM watsonx.ai AutoAI and receive personalized guidance." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ NAVBAR ══ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="Home">
+        <span class="brand-icon" aria-hidden="true">&#9651;</span>
+        <span class="brand-text">PlacementAI</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#home"        class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#assessment"  class="nav-link"        data-section="assessment">Assessment</a></li>
+        <li><a href="#how-it-works" class="nav-link"       data-section="how-it-works">How It Works</a></li>
+        <li><a href="#about"       class="nav-link"        data-section="about">About Project</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════ HERO ══ -->
+  <section class="hero" id="home" aria-labelledby="heroTitle">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Powered by IBM watsonx.ai AutoAI</div>
+      <h1 class="hero-title" id="heroTitle">
+        AI-Based Student Performance<br>&amp; Placement Guidance System
+      </h1>
+      <p class="hero-subtitle">
+        Evaluate your placement readiness using an AI-powered machine learning model
+        and receive personalized guidance to improve your career preparation.
+      </p>
+      <a href="#assessment" class="btn btn-primary btn-lg hero-cta">
+        Check Your Placement Readiness
+        <span class="btn-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+      <div class="hero-stats" aria-label="System highlights">
+        <div class="hero-stat">
+          <span class="stat-value">10</span>
+          <span class="stat-label">Input Features</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-value">IBM</span>
+          <span class="stat-label">watsonx.ai AutoAI</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-value">AI</span>
+          <span class="stat-label">Personalized Guidance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════ ASSESSMENT ══ -->
+  <section class="section assessment-section" id="assessment" aria-labelledby="assessmentTitle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Student Assessment</span>
+        <h2 class="section-title" id="assessmentTitle">Enter Your Academic &amp; Skill Profile</h2>
+        <p class="section-desc">
+          Provide accurate information to receive a detailed placement readiness analysis
+          and personalized improvement guidance.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <form id="assessmentForm" novalidate aria-label="Student assessment form">
+
+          <!-- Row 1: Attendance + Study Hours -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="attendance" class="form-label">
+                Attendance (%)
+                <span class="label-hint">Percentage of classes attended</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="attendance" name="attendance"
+                       class="form-input" placeholder="e.g. 85"
+                       min="0" max="100" step="1"
+                       aria-describedby="attendance-error" required />
+                <span class="input-unit">%</span>
+              </div>
+              <span class="field-error" id="attendance-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="studyHours" class="form-label">
+                Study Hours / Day
+                <span class="label-hint">Average daily self-study hours</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="studyHours" name="studyHours"
+                       class="form-input" placeholder="e.g. 4"
+                       min="0" max="18" step="0.5"
+                       aria-describedby="studyHours-error" required />
+                <span class="input-unit">hrs</span>
+              </div>
+              <span class="field-error" id="studyHours-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 2: CGPA + Projects -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cgpa" class="form-label">
+                CGPA
+                <span class="label-hint">Cumulative Grade Point Average (0–10)</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="cgpa" name="cgpa"
+                       class="form-input" placeholder="e.g. 7.8"
+                       min="0" max="10" step="0.01"
+                       aria-describedby="cgpa-error" required />
+                <span class="input-unit">/ 10</span>
+              </div>
+              <span class="field-error" id="cgpa-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="projects" class="form-label">
+                Projects Completed
+                <span class="label-hint">Total academic / personal projects</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="projects" name="projects"
+                       class="form-input" placeholder="e.g. 3"
+                       min="0" max="50" step="1"
+                       aria-describedby="projects-error" required />
+              </div>
+              <span class="field-error" id="projects-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 3: Internship + Certifications -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="internship" class="form-label">
+                Internship Experience
+                <span class="label-hint">Have you completed any internship?</span>
+              </label>
+              <div class="input-wrapper select-wrapper">
+                <select id="internship" name="internship"
+                        class="form-input form-select"
+                        aria-describedby="internship-error" required>
+                  <option value="">— Select —</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <span class="field-error" id="internship-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="certifications" class="form-label">
+                Certifications Earned
+                <span class="label-hint">Online / professional certifications</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="certifications" name="certifications"
+                       class="form-input" placeholder="e.g. 2"
+                       min="0" max="30" step="1"
+                       aria-describedby="certifications-error" required />
+              </div>
+              <span class="field-error" id="certifications-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 4: Aptitude + Communication -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="aptitudeScore" class="form-label">
+                Aptitude Score
+                <span class="label-hint">Score out of 100</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="aptitudeScore" name="aptitudeScore"
+                       class="form-input" placeholder="e.g. 72"
+                       min="0" max="100" step="1"
+                       aria-describedby="aptitudeScore-error" required />
+                <span class="input-unit">/ 100</span>
+              </div>
+              <span class="field-error" id="aptitudeScore-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="communicationSkills" class="form-label">
+                Communication Skills
+                <span class="label-hint">Self-rating out of 10</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="communicationSkills" name="communicationSkills"
+                       class="form-input" placeholder="e.g. 7"
+                       min="1" max="10" step="1"
+                       aria-describedby="communicationSkills-error" required />
+                <span class="input-unit">/ 10</span>
+              </div>
+              <span class="field-error" id="communicationSkills-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 5: Coding + Mock Interview -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="codingSkills" class="form-label">
+                Coding Skills
+                <span class="label-hint">Self-rating out of 10</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="codingSkills" name="codingSkills"
+                       class="form-input" placeholder="e.g. 6"
+                       min="1" max="10" step="1"
+                       aria-describedby="codingSkills-error" required />
+                <span class="input-unit">/ 10</span>
+              </div>
+              <span class="field-error" id="codingSkills-error" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="mockInterviewScore" class="form-label">
+                Mock Interview Score
+                <span class="label-hint">Score out of 100</span>
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="mockInterviewScore" name="mockInterviewScore"
+                       class="form-input" placeholder="e.g. 65"
+                       min="0" max="100" step="1"
+                       aria-describedby="mockInterviewScore-error" required />
+                <span class="input-unit">/ 100</span>
+              </div>
+              <span class="field-error" id="mockInterviewScore-error" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary btn-xl" id="submitBtn">
+              <span class="btn-text">Predict &amp; Get Guidance</span>
+              <span class="btn-spinner" id="btnSpinner" aria-hidden="true" hidden></span>
+            </button>
+            <p class="form-note">
+              &#128274; Your data is processed locally and is not stored on any server.
+            </p>
+          </div>
+
+        </form>
+      </div><!-- /form-card -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════ RESULTS ══ -->
+  <section class="section results-section" id="results" aria-labelledby="resultsTitle" hidden>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Results Dashboard</span>
+        <h2 class="section-title" id="resultsTitle">Your Placement Readiness Analysis</h2>
+      </div>
+
+      <!-- IBM Prediction Card -->
+      <div class="card prediction-card" id="predictionCard">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">&#129302;</span>
+            IBM watsonx.ai AutoAI — Placement Prediction
+          </h3>
+          <span class="badge badge-ibm">Requires IBM Cloud</span>
+        </div>
+        <div id="predictionContent" class="prediction-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Readiness Score Card -->
+      <div class="results-grid">
+        <div class="card readiness-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">&#127919;</span>
+              Placement Readiness Score
+            </h3>
+            <span class="badge badge-guidance">Rule-Based Analysis</span>
+          </div>
+          <div class="readiness-score-display">
+            <div class="score-ring-wrapper" aria-label="Readiness score">
+              <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="52" />
+                <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"
+                        stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+              </svg>
+              <div class="score-number">
+                <span id="readinessScore">—</span>
+                <small>/ 100</small>
+              </div>
+            </div>
+            <div class="readiness-label" id="readinessLabel"></div>
+          </div>
+        </div>
+
+        <!-- Strengths -->
+        <div class="card strengths-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">&#9989;</span>
+              Strengths
+            </h3>
+          </div>
+          <ul class="insight-list strengths-list" id="strengthsList" aria-label="Your strengths"></ul>
+        </div>
+      </div>
+
+      <!-- Improvement Areas + Action Plan -->
+      <div class="results-grid">
+        <div class="card improvements-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">&#128200;</span>
+              Areas for Improvement
+            </h3>
+          </div>
+          <ul class="insight-list improvements-list" id="improvementsList" aria-label="Areas to improve"></ul>
+        </div>
+
+        <div class="card action-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <span class="card-icon" aria-hidden="true">&#128203;</span>
+              Personalized Action Plan
+            </h3>
+          </div>
+          <ol class="action-list" id="actionList" aria-label="Action plan"></ol>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card next-steps-card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">&#128640;</span>
+            Recommended Next Steps
+          </h3>
+        </div>
+        <div class="next-steps-grid" id="nextStepsList" aria-label="Recommended next steps"></div>
+      </div>
+
+      <div class="results-footer">
+        <p class="guidance-disclaimer">
+          &#8505;&#65039; The Readiness Score, Strengths, Areas for Improvement, Action Plan,
+          and Next Steps are generated by a <strong>transparent rule-based guidance module</strong>
+          and are independent from the IBM AutoAI placement prediction model.
+        </p>
+        <button class="btn btn-outline" id="resetBtn">
+          &#8635; Reassess with New Data
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ HOW IT WORKS ══ -->
+  <section class="section how-section" id="how-it-works" aria-labelledby="howTitle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Workflow</span>
+        <h2 class="section-title" id="howTitle">How It Works</h2>
+        <p class="section-desc">
+          Two independent systems work in tandem to give you a complete picture
+          of your placement readiness.
+        </p>
+      </div>
+
+      <div class="workflow-row" aria-label="System workflow">
+        <div class="workflow-step">
+          <div class="step-number" aria-hidden="true">01</div>
+          <div class="step-icon" aria-hidden="true">&#128203;</div>
+          <h4 class="step-title">Student Data Input</h4>
+          <p class="step-desc">You provide 10 academic and skill parameters through the assessment form.</p>
+        </div>
+        <div class="workflow-arrow" aria-hidden="true">&#8594;</div>
+        <div class="workflow-step">
+          <div class="step-number" aria-hidden="true">02</div>
+          <div class="step-icon" aria-hidden="true">&#9729;&#65039;</div>
+          <h4 class="step-title">IBM watsonx.ai AutoAI Model</h4>
+          <p class="step-desc">Data is securely forwarded to your IBM Cloud deployment endpoint for ML inference.</p>
+        </div>
+        <div class="workflow-arrow" aria-hidden="true">&#8594;</div>
+        <div class="workflow-step">
+          <div class="step-number" aria-hidden="true">03</div>
+          <div class="step-icon" aria-hidden="true">&#127919;</div>
+          <h4 class="step-title">Placement Prediction</h4>
+          <p class="step-desc">The AutoAI model returns a YES/NO placement prediction with a confidence score.</p>
+        </div>
+        <div class="workflow-arrow" aria-hidden="true">&#8594;</div>
+        <div class="workflow-step">
+          <div class="step-number" aria-hidden="true">04</div>
+          <div class="step-icon" aria-hidden="true">&#128269;</div>
+          <h4 class="step-title">Student Profile Analysis</h4>
+          <p class="step-desc">A rule-based engine separately analyzes each parameter to identify strengths and gaps.</p>
+        </div>
+        <div class="workflow-arrow" aria-hidden="true">&#8594;</div>
+        <div class="workflow-step">
+          <div class="step-number" aria-hidden="true">05</div>
+          <div class="step-icon" aria-hidden="true">&#128161;</div>
+          <h4 class="step-title">Personalized Guidance</h4>
+          <p class="step-desc">Tailored action plans and next steps help you focus on the areas that matter most.</p>
+        </div>
+      </div>
+
+      <div class="architecture-note">
+        <div class="arch-note-inner">
+          <h4>&#128274; Security Architecture</h4>
+          <p>
+            Your IBM Cloud API key and deployment URL are stored exclusively on the backend server
+            and are <strong>never exposed</strong> to the browser. The frontend communicates only
+            with <code>/api/prediction</code> on your local Express server, which acts as a
+            secure proxy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════ ABOUT ══ -->
+  <section class="section about-section" id="about" aria-labelledby="aboutTitle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Project</span>
+        <h2 class="section-title" id="aboutTitle">About This System</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="card about-card">
+          <div class="about-card-icon" aria-hidden="true">&#129302;</div>
+          <h3>IBM watsonx.ai AutoAI Model</h3>
+          <p>
+            The placement prediction model was trained using
+            <strong>IBM watsonx.ai AutoAI</strong> — IBM's automated machine learning platform
+            that automatically prepares data, selects algorithms, and optimizes model
+            hyperparameters. The best-performing pipeline was deployed as an <strong>online
+            deployment</strong> on IBM Cloud, making it accessible via a REST API endpoint.
+          </p>
+        </div>
+
+        <div class="card about-card">
+          <div class="about-card-icon" aria-hidden="true">&#128202;</div>
+          <h3>Rule-Based Guidance Engine</h3>
+          <p>
+            Separate from the AutoAI model, a transparent rule-based guidance module
+            analyzes each of the 10 input parameters against defined thresholds.
+            This module provides human-interpretable feedback, identifies skill gaps,
+            and generates actionable recommendations. It is completely independent from
+            the machine learning prediction.
+          </p>
+        </div>
+
+        <div class="card about-card">
+          <div class="about-card-icon" aria-hidden="true">&#128274;</div>
+          <h3>Secure Backend Architecture</h3>
+          <p>
+            IBM Cloud credentials are stored in environment variables on the backend server
+            (Node.js / Express) and are never sent to the browser. The backend uses
+            IBM IAM token-based authentication with automatic token refresh, rate limiting,
+            and security headers via Helmet.js.
+          </p>
+        </div>
+
+        <div class="card about-card">
+          <div class="about-card-icon" aria-hidden="true">&#128218;</div>
+          <h3>Technology Stack</h3>
+          <ul class="tech-list">
+            <li><strong>ML Platform:</strong> IBM watsonx.ai AutoAI</li>
+            <li><strong>Cloud:</strong> IBM Cloud — Watson Machine Learning</li>
+            <li><strong>Backend:</strong> Node.js, Express.js</li>
+            <li><strong>Frontend:</strong> HTML5, CSS3, Vanilla JavaScript</li>
+            <li><strong>Security:</strong> Helmet.js, express-rate-limit, dotenv</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon" aria-hidden="true">&#9651;</span>
+        <span>PlacementAI</span>
+      </div>
+      <p class="footer-text">
+        AI-Based Student Performance &amp; Placement Guidance System<br>
+        <span class="footer-muted">Prediction powered by IBM watsonx.ai AutoAI · Guidance by rule-based analysis</span>
+      </p>
+      <p class="footer-muted footer-disclaimer">
+        This tool is designed to assist students in self-assessment. Placement outcomes depend on many additional factors.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/guidance.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
