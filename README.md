@@ -1,69 +1,76 @@
 # 🎓 AI-Based Student Performance & Placement Prediction
 
-> A machine learning project developed using **IBM watsonx.ai AutoAI** and **IBM Cloud** to predict student placement outcomes, extended with an interactive **PlacementAI web application** that provides placement readiness analysis and personalized student guidance.
+> An AI-powered machine learning and student guidance project developed using **IBM watsonx.ai AutoAI**, **IBM Cloud**, and **IBM Bob** to predict student placement outcomes and provide personalized placement-readiness guidance.
 
 ---
 
 ## 📌 Project Overview
 
-Student placement is an important aspect of higher education. Identifying the factors that influence placement outcomes can help students understand the areas in which they need improvement.
+Student placement is an important aspect of higher education. Identifying the factors that influence placement outcomes can help students understand their placement readiness and identify areas that require improvement.
 
-This project uses **IBM watsonx.ai AutoAI** to build, evaluate, and deploy a machine learning model for student placement prediction. The model analyzes student-related attributes such as attendance, CGPA, projects, internship experience, certifications, aptitude score, communication skills, coding skills, and mock interview performance.
+This project uses **IBM watsonx.ai AutoAI** to build, evaluate, and deploy a machine learning model for student placement prediction. The model analyzes student-related attributes such as attendance, study hours, CGPA, projects, internship experience, certifications, aptitude score, communication skills, coding skills, and mock interview performance.
 
-The trained model is deployed as an online deployment on IBM Cloud and can generate placement predictions using student input data.
+The trained machine learning model was deployed as an online deployment on IBM Cloud and successfully tested using student input data.
 
-To extend the project beyond a simple **Yes/No placement prediction**, an interactive web application named **PlacementAI** was also developed. The application integrates the IBM watsonx.ai deployment with a student-focused guidance system that provides a Placement Readiness Score, strengths, areas for improvement, a personalized action plan, and recommended next steps.
+To extend the project beyond a simple **Yes/No placement prediction**, an interactive web application named **PlacementAI** was developed using **IBM Bob**. The application integrates the IBM watsonx.ai deployment with a separate student guidance system that provides:
+
+- Placement Readiness Score
+- Student Strengths
+- Areas for Improvement
+- Personalized Action Plan
+- Recommended Next Steps
 
 ---
 
 ## 🎯 Problem Statement
 
-Develop a machine learning solution that predicts whether a student is likely to be placed based on academic performance, technical skills, internship experience, certifications, aptitude scores, communication skills, coding skills, and other relevant parameters.
+Develop an AI-powered machine learning solution that predicts whether a student is likely to be placed based on academic performance, technical skills, internship experience, certifications, aptitude scores, communication skills, coding skills, and other relevant parameters.
 
-The project is further extended with a student guidance interface to help students understand their placement readiness and identify areas for improvement.
+The project is further extended with an interactive student guidance system to help students understand their placement readiness and identify specific areas for improvement.
 
 ---
 
 ## 💡 Proposed Solution
 
-The project combines machine learning-based placement prediction with an interactive student guidance system.
+The proposed solution combines two major components:
 
-### Machine Learning Component
+### 1. AI-Based Placement Prediction
 
-- Uploading and preparing the student placement dataset
-- Creating an AutoAI experiment
-- Automatically generating and comparing multiple machine learning pipelines
-- Selecting the best-performing pipeline
-- Saving the selected pipeline as a machine learning model
-- Deploying the model as an online deployment
-- Testing the deployed model with student data
-- Generating a placement prediction
+- Upload and prepare the student placement dataset
+- Create an IBM watsonx.ai AutoAI experiment
+- Automatically generate and compare machine learning pipelines
+- Select the best-performing pipeline
+- Save the selected pipeline as a machine learning model
+- Deploy the model as an online deployment on IBM Cloud
+- Generate placement predictions using student data
 
-### PlacementAI Web Application
+### 2. PlacementAI Student Guidance System
 
-- Collecting student academic and skill-related information
-- Connecting with the IBM watsonx.ai deployed model
-- Displaying the machine learning placement prediction when IBM Cloud resources are available
-- Calculating a rule-based Placement Readiness Score
-- Identifying student strengths and areas for improvement
-- Generating a personalized action plan
-- Providing recommended next steps for placement preparation
+- Collect student academic and skill-related information
+- Connect with the deployed IBM watsonx.ai model
+- Display the machine learning placement prediction when the IBM Cloud prediction service is available
+- Calculate a rule-based Placement Readiness Score
+- Identify strengths and areas for improvement
+- Generate a personalized action plan
+- Recommend practical next steps for placement preparation
 
 ---
 
 ## 🚀 Key Features
 
-- Student placement prediction
+- AI-based student placement prediction
 - Automated machine learning using IBM watsonx.ai AutoAI
 - Multiple machine learning pipeline generation
-- Automatic pipeline comparison
+- Automatic pipeline comparison and optimization
 - Model evaluation
 - Online model deployment
 - REST API integration
 - Interactive PlacementAI web application
+- Student placement-readiness assessment
 - Placement Readiness Score
-- Strength and improvement-area analysis
-- Personalized student action plan
+- Strength analysis
+- Areas for improvement
+- Personalized action plan
 - Recommended next steps
 - Professional fallback during temporary IBM Cloud resource limitations
 
@@ -71,7 +78,7 @@ The project combines machine learning-based placement prediction with an interac
 
 ## 🛠️ Technologies and Services Used
 
-### IBM Cloud and Machine Learning
+### IBM Technologies
 
 - IBM Cloud
 - IBM Cloud Pak for Data
@@ -79,20 +86,89 @@ The project combines machine learning-based placement prediction with an interac
 - IBM Cloud Object Storage
 - IBM Machine Learning
 - IBM Deployment Space
-
-### Web Application
-
 - IBM Bob
+
+### Web Technologies
+
+- Node.js
+- Express.js
 - HTML
 - CSS
 - JavaScript
-- Node.js
-- Express.js
 - REST API
 
 ### Data
 
 - CSV Dataset
+
+---
+
+## 📊 Dataset Features
+
+The dataset contains **10 input features** and **1 target column**.
+
+| Feature | Description | Type |
+|---|---|---|
+| Attendance | Student attendance percentage | Input |
+| Study_Hours | Average study hours | Input |
+| CGPA | Academic performance | Input |
+| Projects | Number of completed projects | Input |
+| Internship | Internship experience | Input |
+| Certifications | Number of certifications | Input |
+| Aptitude_Score | Student aptitude score | Input |
+| Communication_Skills | Communication skill level | Input |
+| Coding_Skills | Programming skill level | Input |
+| Mock_Interview_Score | Mock interview performance | Input |
+| Placement | Student placement outcome | Target |
+
+---
+
+## 🔄 Complete System Workflow
+
+The complete project workflow combines the IBM watsonx.ai machine learning pipeline with the PlacementAI student guidance system.
+
+```text
+Student Placement Dataset
+        ↓
+IBM Cloud Project
+        ↓
+IBM watsonx.ai AutoAI
+        ↓
+Data Preprocessing
+        ↓
+Feature Engineering
+        ↓
+Machine Learning Pipeline Generation
+        ↓
+Pipeline Comparison
+        ↓
+Best Model Selection
+        ↓
+Model Evaluation
+        ↓
+IBM Cloud Online Deployment
+        ↓
+REST API Integration
+        ↓
+PlacementAI Web Application
+        ↓
+Student Enters Academic & Skill Information
+        ↓
+        ┌──────────────────────────────┐
+        │                              │
+        ↓                              ↓
+IBM AutoAI Model              Student Profile Analysis
+        ↓                              ↓
+Placement Prediction          Placement Readiness Score
+YES / NO                      Strengths
+                              Areas for Improvement
+                              Personalized Action Plan
+                              Recommended Next Steps
+        │                              │
+        └──────────────┬───────────────┘
+                       ↓
+          Complete Student Guidance Result
+```
 
 ---
 
@@ -106,30 +182,13 @@ The project combines machine learning-based placement prediction with an interac
 6. Generate multiple machine learning pipelines
 7. Compare pipeline performance
 8. Select the best-performing pipeline
-9. Save the selected pipeline as a model
-10. Create a deployment space
-11. Deploy the model as an online deployment
-12. Test the deployed model
-13. Generate placement predictions
-14. Integrate the deployment with the PlacementAI web application
-
----
-
-## 📊 Dataset Features
-
-| Feature | Description |
-|---|---|
-| Attendance | Student attendance percentage |
-| Study_Hours | Average study hours |
-| CGPA | Academic performance |
-| Projects | Number of completed projects |
-| Internship | Internship experience |
-| Certifications | Number of certifications |
-| Aptitude_Score | Student aptitude score |
-| Communication_Skills | Communication skill level |
-| Coding_Skills | Programming skill level |
-| Mock_Interview_Score | Mock interview performance |
-| Placement | Target variable indicating placement outcome |
+9. Evaluate the selected model
+10. Save the selected pipeline as a model
+11. Create a deployment space
+12. Deploy the model as an online deployment
+13. Test the deployed model
+14. Generate placement predictions
+15. Integrate the deployment with the PlacementAI web application
 
 ---
 
@@ -149,26 +208,30 @@ The project combines machine learning-based placement prediction with an interac
 
 ---
 
-## 📈 Results
+## 📈 Model Results
 
 The AutoAI experiment generated **9 machine learning pipelines** using different algorithms and optimization techniques.
 
 The top-ranked pipeline was **Pipeline 9**, which used a **Batched Tree Ensemble Classifier (Snap Random Forest Classifier)**.
 
-The experiment achieved:
+### Performance
 
-- **Cross-validation accuracy: 0.970**
-- **Holdout accuracy: 0.960**
+- **Cross-validation accuracy: 97%**
+- **Holdout accuracy: 96%**
 
-The selected model was successfully saved as **Student Placement Predictor** and deployed as an online deployment named **Student Placement API**.
+The selected model was successfully saved as:
+
+`Student Placement Predictor`
+
+The model was deployed as an online deployment named:
+
+`Student Placement API`
 
 The deployed model was successfully tested and generated a placement prediction of **Yes** for the recorded test input.
 
-The project was further extended with the **PlacementAI web application**, which provides student-focused placement readiness analysis and personalized guidance.
-
 ---
 
-# 📸 Project Screenshots
+# 📸 IBM Cloud Project Screenshots
 
 ## 1. Project Overview
 
@@ -232,7 +295,7 @@ The project was further extended with the **PlacementAI web application**, which
 
 ## ⚙️ Project Implementation
 
-### Step 1: Create the Project
+### Step 1: Create the IBM Cloud Project
 
 A new project named **AI-Based Student Performance & Placement Prediction** was created in IBM Cloud Pak for Data.
 
@@ -246,11 +309,11 @@ An AutoAI experiment named **Student Placement Prediction** was created using th
 
 ### Step 4: Train the Model
 
-AutoAI automatically processed the dataset and generated multiple machine learning pipelines.
+IBM watsonx.ai AutoAI automatically processed the dataset and generated multiple machine learning pipelines.
 
 ### Step 5: Select the Best Pipeline
 
-The generated pipelines were compared based on their performance. **Pipeline 9** was the top-ranked pipeline.
+The generated pipelines were compared based on their performance. **Pipeline 9** was selected as the top-ranked pipeline.
 
 ### Step 6: Save the Model
 
@@ -276,61 +339,104 @@ The deployed model was tested using student input data and successfully returned
 
 An interactive web application named **PlacementAI** was developed using **IBM Bob**.
 
-The application provides an interface for entering student academic and skill-related information and presents placement-focused analysis in an easy-to-understand format.
+The application provides an interface for students to enter their academic and skill-related information.
 
 ### Step 10: Integrate IBM watsonx.ai
 
-The web application includes integration with the deployed IBM watsonx.ai AutoAI model through the IBM Cloud prediction API.
+The web application includes backend integration with the deployed IBM watsonx.ai AutoAI model through the IBM Cloud prediction API.
 
-The IBM model remains responsible for the machine learning-based placement prediction.
+The IBM AutoAI model remains responsible for the machine learning-based placement prediction.
 
 ### Step 11: Add the Student Guidance System
 
-A complementary rule-based guidance system was implemented to provide:
+A separate rule-based guidance system was implemented to provide:
 
 - Placement Readiness Score
-- Student strengths
-- Areas for improvement
-- Personalized action plan
-- Recommended next steps
+- Student Strengths
+- Areas for Improvement
+- Personalized Action Plan
+- Recommended Next Steps
 
-The guidance system does not replace the IBM AutoAI model and does not generate a fake machine learning prediction.
+The guidance system complements the IBM AutoAI prediction and does not generate fake machine learning predictions.
 
 ---
 
-## 🌐 PlacementAI Web Application
+# 🌐 PlacementAI Web Application
 
-**PlacementAI** extends the original placement prediction project into an interactive student guidance platform.
+**PlacementAI** extends the original placement prediction project into an interactive student placement guidance platform.
 
-### Main Features
+## Main Features
 
+- Interactive student assessment form
 - IBM watsonx.ai AutoAI prediction integration
-- Interactive student assessment
 - Placement Readiness Score
-- Strength analysis
+- Student strengths analysis
 - Areas for improvement
 - Personalized action plan
 - Recommended next steps
+- Responsive web interface
 - Graceful handling of temporary IBM Cloud resource limitations
 
-### Prediction and Guidance Architecture
+---
 
-The system consists of two separate components:
+## 🧠 Prediction and Guidance Architecture
 
-#### IBM watsonx.ai AutoAI Model
+The system contains two separate components.
+
+### IBM watsonx.ai AutoAI Model
 
 - Performs the machine learning-based placement prediction
 - Uses the trained and deployed AutoAI model
-- Returns the placement prediction when IBM Cloud prediction resources are available
+- Generates a `Yes` or `No` placement prediction when IBM Cloud prediction resources are available
 
-#### Placement Guidance System
+### Placement Guidance System
 
-- Provides a rule-based Placement Readiness Score
-- Identifies strengths and areas for improvement
+- Analyzes the student's entered academic and skill information
+- Calculates a rule-based Placement Readiness Score
+- Identifies strengths
+- Identifies areas requiring improvement
 - Generates a personalized action plan
-- Recommends practical next steps for placement preparation
+- Recommends practical next steps
 
-> **Note:** If IBM Cloud prediction resources are temporarily unavailable due to Capacity Unit Hour (CUH) limitations, the application continues to provide its rule-based readiness analysis and personalized guidance. No fake AI prediction is generated.
+> **Note:** If IBM Cloud prediction resources are temporarily unavailable due to Capacity Unit Hour (CUH) limitations, PlacementAI continues to provide its rule-based readiness analysis and personalized guidance. No fake or simulated AI prediction is generated.
+
+---
+
+# 🌐 PlacementAI Web Application Screenshots
+
+## 1. PlacementAI Homepage
+
+![PlacementAI Homepage](Screenshots/PlacementAI_Homepage.png)
+
+---
+
+## 2. Student Assessment Form
+
+![Student Assessment Form](Screenshots/Student_Assessment_Form.png)
+
+---
+
+## 3. Placement Readiness Results
+
+![Placement Readiness Results](Screenshots/Placement_Readiness_Results.png)
+
+---
+
+## 4. Personalized Guidance
+
+![Personalized Guidance](Screenshots/Personalized_Guidance.png)
+
+---
+
+## 5. PlacementAI Workflow
+
+![PlacementAI Workflow](Screenshots/PlacementAI_Workflow.png)
+
+---
+
+## 6. About Project
+
+![PlacementAI About Project](Screenshots/PlacementAI_About_Project.png)
 
 ---
 
@@ -347,24 +453,43 @@ AI-Based-Student-Performance-and-Placement-Prediction/
 │
 ├── PlacementAI-Web-Application/
 │   ├── public/
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── script.js
+│   │
 │   ├── server/
+│   │   ├── server.js
+│   │   └── guidanceEngine.js
+│   │
 │   ├── .env.example
 │   ├── .gitignore
 │   ├── package.json
 │   └── package-lock.json
 │
 └── Screenshots/
-    ├── API_Deployment.png
-    ├── Assets_List.png
-    ├── AutoAI_Relationship_Map.png
-    ├── Dataset_Preview.png
-    ├── Deployment_Dashboard.png
-    ├── Deployment_Space.png
-    ├── Model_Evaluation_ROC.png
-    ├── Pipeline_Leaderboard.png
-    ├── Prediction_Result.png
-    └── Project_Overview.png
+    │
+    ├── IBM Cloud Screenshots
+    │   ├── API_Deployment.png
+    │   ├── Assets_List.png
+    │   ├── AutoAI_Relationship_Map.png
+    │   ├── Dataset_Preview.png
+    │   ├── Deployment_Dashboard.png
+    │   ├── Deployment_Space.png
+    │   ├── Model_Evaluation_ROC.png
+    │   ├── Pipeline_Leaderboard.png
+    │   ├── Prediction_Result.png
+    │   └── Project_Overview.png
+    │
+    └── PlacementAI Screenshots
+        ├── PlacementAI_Homepage.png
+        ├── Student_Assessment_Form.png
+        ├── Placement_Readiness_Results.png
+        ├── Personalized_Guidance.png
+        ├── PlacementAI_Workflow.png
+        └── PlacementAI_About_Project.png
 ```
+
+> All screenshot files are stored directly inside the `Screenshots` folder. The grouping above is shown only to clearly distinguish IBM Cloud screenshots from PlacementAI web application screenshots.
 
 ---
 
@@ -389,24 +514,45 @@ AI-Based-Student-Performance-and-Placement-Prediction/
 
 ## 💻 How to Run the PlacementAI Web Application
 
-1. Open the `PlacementAI-Web-Application` folder.
-2. Install the required dependencies using:
+### 1. Open the web application folder
+
+```bash
+cd PlacementAI-Web-Application
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. Copy `.env.example` and rename the copy to `.env`.
-4. Add the required IBM Cloud credentials to the `.env` file.
-5. Start the application using:
+### 3. Configure environment variables
+
+Copy `.env.example` and create a new file named `.env`.
+
+Add the required IBM Cloud configuration values to the local `.env` file.
+
+> Never upload the `.env` file containing real IBM Cloud credentials or API keys to a public repository.
+
+### 4. Start the application
 
 ```bash
 npm start
 ```
 
-6. Open the local application in a web browser.
+### 5. Open the application
 
-> Never upload the `.env` file containing real IBM Cloud credentials or API keys to a public repository.
+Open the local application address displayed in the terminal.
+
+---
+
+## 🔐 Security
+
+- IBM Cloud API credentials are stored only in the local `.env` file.
+- The `.env` file is excluded from GitHub using `.gitignore`.
+- `.env.example` contains only placeholder configuration values.
+- IBM Cloud credentials are not exposed in frontend code.
+- No fake or hardcoded AI placement predictions are used.
 
 ---
 
@@ -415,14 +561,15 @@ npm start
 The project can be further extended with:
 
 - Public cloud deployment of the PlacementAI web application
-- Student performance dashboard
-- College placement analytics
-- Career recommendation system
+- AI-powered career path recommendation
 - Resume analysis
-- Interview preparation recommendations
-- Student guidance chatbot
-- Integration with real-time institutional data
-- More advanced personalized recommendation models
+- Interview performance prediction
+- Student recommendation system
+- Mobile application
+- Real-time institutional dashboard
+- Integration with college ERP systems
+- Advanced personalized recommendation models
+- Deep learning integration
 
 ---
 
@@ -430,16 +577,18 @@ The project can be further extended with:
 
 ### For Students
 
-- Understand factors affecting placement readiness
-- Identify strengths and areas for improvement
-- Receive a personalized preparation plan
-- Support career and placement preparation
+- Understand placement readiness
+- Identify strengths and weaknesses
+- Receive personalized improvement guidance
+- Follow a structured placement preparation plan
+- Improve career preparation
 
 ### For Educational Institutions
 
 - Analyze student placement readiness
 - Identify students who may require additional support
 - Support data-driven placement preparation
+- Improve placement training strategies
 
 ---
 
@@ -459,12 +608,15 @@ MIT Academy of Engineering (MITAOE)
 This repository contains:
 
 - Project Problem Statement
-- Project Report
+- IBM Project Report
 - Project Presentation
 - Student Placement Dataset
 - IBM Cloud implementation screenshots
-- PlacementAI web application source code
-- Project README documentation
+- PlacementAI web application screenshots
+- PlacementAI frontend and backend source code
+- IBM watsonx.ai API integration
+- Student guidance system
+- Complete project documentation
 
 ---
 
