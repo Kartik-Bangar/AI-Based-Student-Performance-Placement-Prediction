@@ -58,7 +58,6 @@ The solution includes:
 - IBM Cloud Object Storage
 - IBM Machine Learning
 - IBM Deployment Space
-- Python-based machine learning environment
 - CSV Dataset
 
 ---
@@ -126,79 +125,79 @@ The experiment achieved:
 - **Cross-validation accuracy: 0.970**
 - **Holdout accuracy: 0.960**
 
-The selected model was successfully saved and deployed as an online deployment named **Student Placement API**.
+The selected model was successfully saved as **Student Placement Predictor** and deployed as an online deployment named **Student Placement API**.
 
-The deployed model was tested successfully and generated a placement prediction of **Yes** for the test input.
+The deployed model was successfully tested and generated a placement prediction of **Yes** for the test input.
 
 ---
 
-## 📸 Project Screenshots
+# 📸 Project Screenshots
 
-### 1. Project Overview
+## 1. Project Overview
 
 ![Project Overview](Screenshots/Project_Overview.png)
 
 ---
 
-### 2. Project Assets
+## 2. Project Assets
 
-![Project Assets](Screenshots/Project_Assets.png)
+![Project Assets](Screenshots/Assets_List.png)
 
 ---
 
-### 3. Dataset Preview
+## 3. Dataset Preview
 
 ![Dataset Preview](Screenshots/Dataset_Preview.png)
 
 ---
 
-### 4. AutoAI Relationship Map
+## 4. AutoAI Relationship Map
 
-![AutoAI Relationship Map](Screenshots/Relationship_Map.png)
+![AutoAI Relationship Map](Screenshots/AutoAI_Relationship_Map.png)
 
 ---
 
-### 5. Pipeline Leaderboard
+## 5. Pipeline Leaderboard
 
 ![Pipeline Leaderboard](Screenshots/Pipeline_Leaderboard.png)
 
 ---
 
-### 6. Model Evaluation
+## 6. Model Evaluation
 
-![Model Evaluation](Screenshots/Model_Evaluation.png)
-
----
-
-### 7. Model Deployment
-
-![Model Deployment](Screenshots/Deployment.png)
+![Model Evaluation ROC](Screenshots/Model_Evaluation_ROC.png)
 
 ---
 
-### 8. API Reference
+## 7. Deployment Space
 
-![API Reference](Screenshots/API_Reference.png)
+![Deployment Space](Screenshots/Deployment_Space.png)
 
 ---
 
-### 9. Prediction Result
+## 8. API Deployment
+
+![API Deployment](Screenshots/API_Deployment.png)
+
+---
+
+## 9. Prediction Result
 
 ![Prediction Result](Screenshots/Prediction_Result.png)
 
 ---
 
-### 10. Deployment Dashboard
+## 10. Deployment Dashboard
 
 ![Deployment Dashboard](Screenshots/Deployment_Dashboard.png)
 
 ---
 
-## ⚙️ How the Project Was Implemented
+## ⚙️ Project Implementation
 
 ### Step 1: Create the Project
 
-A new project was created in IBM Cloud Pak for Data for the student performance and placement prediction system.
+A new project named **AI-Based Student Performance & Placement Prediction** was created in IBM Cloud Pak for Data.
 
 ### Step 2: Upload the Dataset
 
@@ -206,7 +205,7 @@ The `Student_Performance_Placement_Dataset.csv` file was uploaded to the project
 
 ### Step 3: Create an AutoAI Experiment
 
-An AutoAI experiment was created using the uploaded dataset, with `Placement` selected as the target prediction column.
+An AutoAI experiment named **Student Placement Prediction** was created using the uploaded dataset, with `Placement` selected as the target prediction column.
 
 ### Step 4: Train the Model
 
@@ -214,17 +213,21 @@ AutoAI automatically processed the dataset and generated multiple machine learni
 
 ### Step 5: Select the Best Pipeline
 
-The generated pipelines were compared based on their performance. Pipeline 9 was selected as the top-ranked pipeline.
+The generated pipelines were compared based on their performance. **Pipeline 9** was the top-ranked pipeline.
 
 ### Step 6: Save the Model
 
-The selected pipeline was saved as the machine learning model:
+The selected pipeline was saved as a machine learning model named:
 
 `Student Placement Predictor`
 
-### Step 7: Deploy the Model
+### Step 7: Create the Deployment
 
-A deployment space named `Student Placement Space` was used to create an online deployment named:
+A deployment space named:
+
+`Student Placement Space`
+
+was used to create an online deployment named:
 
 `Student Placement API`
 
@@ -246,17 +249,36 @@ AI-Based-Student-Performance-and-Placement-Prediction/
 ├── Student_Performance_Placement_Dataset.csv
 │
 └── Screenshots/
-    ├── Project_Overview.png
-    ├── Project_Assets.png
+    ├── API_Deployment.png
+    ├── Assets_List.png
+    ├── AutoAI_Relationship_Map.png
     ├── Dataset_Preview.png
-    ├── Relationship_Map.png
+    ├── Deployment_Dashboard.png
+    ├── Deployment_Space.png
+    ├── Model_Evaluation_ROC.png
     ├── Pipeline_Leaderboard.png
-    ├── Model_Evaluation.png
-    ├── Deployment.png
-    ├── API_Reference.png
     ├── Prediction_Result.png
-    └── Deployment_Dashboard.png
+    └── Project_Overview.png
 ```
+
+---
+
+## ⚙️ How to Reproduce the Project
+
+1. Log in to IBM Cloud.
+2. Open IBM Cloud Pak for Data.
+3. Create a new project.
+4. Upload `Student_Performance_Placement_Dataset.csv`.
+5. Create a new AutoAI experiment.
+6. Select the uploaded dataset as the data source.
+7. Select `Placement` as the prediction column.
+8. Run the AutoAI experiment.
+9. Compare the generated pipelines.
+10. Select and save the best-performing pipeline as a model.
+11. Create or select a deployment space.
+12. Promote the saved model to the deployment space.
+13. Create an online deployment.
+14. Test the deployed model using student input data.
 
 ---
 
